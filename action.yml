@@ -1,37 +1,37 @@
 # action.yml
-name: 'Pelican to Github Pages'
-description: 'Generate the Pelican output and deploy to Github Pages'
+name: "Deploy Pelican Contents to Github Pages"
+description: "Generate the Pelican output and deploy to Github Pages"
 
 branding:
-  icon: 'home'
-  color: 'red'
+  icon: "home"
+  color: "green"
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'  
+  using: "docker"
+  image: "Dockerfile"
   env:
     PYTHON_VERSION: ${{ inputs.PYTHON_VERSION }}
 inputs:
   PYTHON_VERSION:
-    description: 'override the default docker image using python'
+    description: "override the default docker image using python"
     required: false
-    default: '3.7-slim'
+    default: "3.8-slim"
   GH_PAGES_BRANCH:
-    description: 'override the default `gh-pages` deployment branch'
+    description: "override the default `gh-pages` deployment branch"
     required: false
-    default: 'gh-pages'
+    default: "gh-pages"
   GH_PAGES_CNAME:
-    description: 'specify the custom domain configured for the output branch'
+    description: "specify the custom domain configured for the output branch"
     required: false
     default: none
   PELICAN_CONFIG_FILE:
-    description: 'override the default `pelicanconf.py` config file'
+    description: "override the default `pelicanconf.py` config file"
     required: false
     default: publishconf.py
   PELICAN_CONTENT_FOLDER:
-    description: 'override the default `content` content folder'
+    description: "override the default `content` content folder"
     required: false
     default: content
   PELICAN_THEME_FOLDER:
-    description: 'setup the theme folder with package.json file, is required if you need install node modules'
+    description: "setup the theme folder with package.json file, is required if you need install node modules"
     required: false
