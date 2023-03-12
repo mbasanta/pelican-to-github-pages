@@ -24,6 +24,8 @@ pelican ${PELICAN_CONTENT_FOLDER:=content} -s ${PELICAN_CONFIG_FILE:=publishconf
 
 echo 'Publishing to GitHub Pages 📤 '
 git init
+echo "Setting Git safe directory (CVE-2022-24765)"
+git config --global --add safe.directory "${GITHUB_WORKSPACE}"
 git remote add deploy "$remote_repo"
 git checkout $remote_branch || git checkout --orphan $remote_branch
 git config user.name "${GITHUB_ACTOR}"
