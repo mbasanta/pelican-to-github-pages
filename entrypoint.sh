@@ -2,6 +2,7 @@
 
 set -e
 
+echo "REPO: $PYTHON_VERSION"
 echo "REPO: $GITHUB_REPOSITORY"
 echo "ACTOR: $GITHUB_ACTOR"
 

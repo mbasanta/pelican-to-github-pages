@@ -9,8 +9,13 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'  
-
+  env:
+    PYTHON_VERSION: ${{ inputs.PYTHON_VERSION }}
 inputs:
+  PYTHON_VERSION:
+    description: 'override the default docker image using python'
+    required: false
+    default: '3.7-slim'
   GH_PAGES_BRANCH:
     description: 'override the default `gh-pages` deployment branch'
     required: false
