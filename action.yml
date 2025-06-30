@@ -15,7 +15,7 @@ inputs:
   PYTHON_VERSION:
     description: "override the default docker image using python"
     required: false
-    default: "3.8-slim"
+    default: "3.13-slim"
   GH_PAGES_BRANCH:
     description: "override the default `gh-pages` deployment branch"
     required: false
